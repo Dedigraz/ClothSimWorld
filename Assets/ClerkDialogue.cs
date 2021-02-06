@@ -11,6 +11,10 @@ public class ClerkDialogue : MonoBehaviour
 		Debug.Log("Yas");
 		TriggerDialogue();
 	}
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		FindObjectOfType<DialogueManager>().EndDialogue();
+	}
 	public void TriggerDialogue()
 	{
 

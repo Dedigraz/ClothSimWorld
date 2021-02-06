@@ -7,7 +7,7 @@ public class Dialogue
 {
 	public string ClerkTalk = "Welcome to our store, what can we do for you";
 	[TextArea(3, 10)]
-	public string button1 ="I'm just checking around";
+	public string button1Text ="I'm just checking around";
 	[TextArea(3, 10)]
-	public string button2 = "I want to buy something";
+	public string button2Text = "I want to buy something";
 }
