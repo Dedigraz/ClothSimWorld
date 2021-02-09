@@ -10,20 +10,14 @@ public class StoreUI : MonoBehaviour
 	public Image icon;
 	public Text priceText;
 	private Wallet wallet;
-	private Inventory inventory;
-	public Animator Animator;
+	
 
 	void Start()
 	{
-		wallet = Wallet.Instance;
 		nameText.text = item.name;
 		priceText.text = item.cost.ToString();
 		icon.sprite = item.icon;
 	}
 	
-	void BuyItem()
-	{
-		wallet.TryWithdraw(item.cost);
-		inventory.Add(item);
-	}
+	
 }
