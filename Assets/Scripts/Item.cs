@@ -10,6 +10,7 @@ public class Item : ScriptableObject
 	public bool isDefaultItem = false;
 	public int cost = 0;
 
+	public Sprite Sprite = null;
 	public virtual void Use()
 	{
 		//use item

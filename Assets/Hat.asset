@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d9adf675a61f7743bce54e94933d9ea, type: 3}
-  m_Name: Store Items
+  m_Name: Hat
   m_EditorClassIdentifier: 
-  name: New Item
-  icon: {fileID: 0}
+  name: Nice Hat
+  icon: {fileID: 21300000, guid: 0498f8e3695420b4aa9fd940a9691d00, type: 3}
   isDefaultItem: 0
+  cost: 300
+  Sprite: {fileID: 21300000, guid: c38a4dee84c26ae4b9df9cbc3436de0b, type: 3}

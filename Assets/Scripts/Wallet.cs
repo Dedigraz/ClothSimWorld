@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 
 public class Wallet : MonoBehaviour
 {
-	[SerializeField] private int startingFunds;
+	[SerializeField] private int startingFunds = 1000;
 
 	public static Wallet Instance;
 	public Action Balance;
 
-	private int money;
+	public int money;
 
 	private void Awake()
 	{
@@ -23,10 +22,11 @@ public class Wallet : MonoBehaviour
 	}
 
 	public bool CanAfford(int cost) => money >= cost;
+	public int GetBalance() => money;
 
 	public void Add(int fund)
 	{
-		if (fund >0)
+		if (fund >= 0)
 		{
 			money += fund;
 			Balance?.Invoke();
@@ -42,5 +42,14 @@ public class Wallet : MonoBehaviour
 
 		money -= funds;
 		Balance?.Invoke();
+	}
+
+	public void ForceWithdraw(int amount, bool onlyPositiveBalance = false)
+	{
+		if (onlyPositiveBalance && money < 0)
+			return;
+
+		money -= amount;
+		Balance.Invoke();
 	}
 }

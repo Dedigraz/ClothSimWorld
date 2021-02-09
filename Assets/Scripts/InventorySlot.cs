@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : Item
 {
-	public Image icon;
+	new public Image icon;
+	public SpriteRenderer attireRenderer;
 	Item item;
 	public void AddItem(Item newItem)
 	{
@@ -26,5 +27,17 @@ public class InventorySlot : MonoBehaviour
 		{
 			item.Use();
 		}
+	}
+
+	public override void Use()
+	{
+		base.Use();
+
+		ChangeSprite(item);
+	}
+
+	public void ChangeSprite(Item item)
+	{
+		attireRenderer.sprite = item.Sprite;
 	}
 }
