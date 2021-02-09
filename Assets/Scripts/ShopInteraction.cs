@@ -6,19 +6,13 @@ using UnityEngine.UI;
 public class ShopInteraction : MonoBehaviour
 {
 	public Animator animator;
-	[SerializeField] public Text wallet_Balance;
-	[SerializeField]private Item item1;
-	[SerializeField]private Item item2;
+	public Wallet Wallet;
+	public Text wallet_Balance;
 
-
-	//private void Start()
-	//{
-	//	Wallet.Instance.GetBalance();
-	//}
-
-	private void Refresh()
+	private void Start()
 	{
-		wallet_Balance.text = Wallet.Instance.GetBalance().ToString(); //Wallet.GetBalance().ToString("N0");
+		Wallet = Wallet.Instance;
+		wallet_Balance.text = Wallet.money.ToString();
 	}
 	public void OpenShop()
 	{
@@ -29,19 +23,5 @@ public class ShopInteraction : MonoBehaviour
 	public void CloseShop()
 	{
 		animator.SetBool("IsRedPill", false);
-	}
-
-	public void BuyItem1()
-	{
-		Wallet.Instance.TryWithdraw(item1.cost);
-		Inventory.instance.Add(item1);
-		CloseShop();
-	}
-
-	public void BuyItem2()
-	{
-		Wallet.Instance.TryWithdraw(item1.cost);
-		Inventory.instance.Add(item2);
-		CloseShop();
 	}
 }
