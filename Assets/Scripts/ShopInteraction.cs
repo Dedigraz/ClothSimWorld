@@ -7,8 +7,9 @@ public class ShopInteraction : MonoBehaviour
 {
 	public Animator animator;
 	[SerializeField] public Text wallet_Balance;
-	[SerializeField]private Item item1;
-	[SerializeField]private Item item2;
+	//[SerializeField]private Item item1;
+	//[SerializeField]private Item item2;
+	private Wallet wallet;
 
 
 	//private void Start()
@@ -16,9 +17,14 @@ public class ShopInteraction : MonoBehaviour
 	//	Wallet.Instance.GetBalance();
 	//}
 
+	private void Start()
+	{
+		wallet = Wallet.Instance;
+	}
+
 	private void Refresh()
 	{
-		wallet_Balance.text = Wallet.Instance.GetBalance().ToString(); //Wallet.GetBalance().ToString("N0");
+		wallet_Balance.text = wallet.GetBalance().ToString(); //Wallet.GetBalance().ToString("N0");
 	}
 	public void OpenShop()
 	{
@@ -31,17 +37,22 @@ public class ShopInteraction : MonoBehaviour
 		animator.SetBool("IsRedPill", false);
 	}
 
-	public void BuyItem1()
+	private void Buy(Item item)
 	{
-		Wallet.Instance.TryWithdraw(item1.cost);
-		Inventory.instance.Add(item1);
-		CloseShop();
+		wallet.TryWithdraw(item.cost);
+		Inventory.instance.Add(item);
 	}
+	//public void BuyItem1()
+	//{
+	//	wallet.TryWithdraw(item1.cost);
+	//	Inventory.instance.Add(item1);
+	//	CloseShop();
+	//}
 
-	public void BuyItem2()
-	{
-		Wallet.Instance.TryWithdraw(item1.cost);
-		Inventory.instance.Add(item2);
-		CloseShop();
-	}
+	//public void BuyItem2()
+	//{
+	//	wallet.TryWithdraw(item1.cost);
+	//	Inventory.instance.Add(item2);
+	//	CloseShop();
+	//}
 }

@@ -21,20 +21,20 @@ public class InventorySlot : Item
 		icon.sprite = null;
 		icon.enabled = false;
 	}
-	public void UseItem()
+	public void UseItem(Item item)
 	{
 		if (item != null)
 		{
-			item.Use();
+			ChangeSprite(item);
 		}
 	}
 
-	public override void Use()
-	{
-		base.Use();
+	//public override void Use()
+	//{
+	//	base.Use();
 
-		ChangeSprite(item);
-	}
+	//	ChangeSprite(item);
+	//}
 
 	public void ChangeSprite(Item item)
 	{
