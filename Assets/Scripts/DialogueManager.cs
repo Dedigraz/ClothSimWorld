@@ -13,8 +13,6 @@ public class DialogueManager : MonoBehaviour
 	//	sentences = new Queue<string>();
 	//}
 	public Text DialogueText;
-	public Button btn1;
-	public Button btn2;
 	public Text button1;
 	public Text button2;
 	public Animator Animator;

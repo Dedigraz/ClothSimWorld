@@ -4,6 +4,8 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
 	public Transform itemsPanel;
+	public GameObject inventoryUI;
+
 	InventorySlot[] slots;
 	Inventory inventory;
 	// Start is called before the first frame update
@@ -18,7 +20,10 @@ public class InventoryUI : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+		if (Input.GetButtonDown("Inventory"))
+		{
+			inventoryUI.SetActive(!inventoryUI.activeSelf);
+		}
 	}
 	void UpdateUI()
 	{
@@ -32,6 +37,11 @@ public class InventoryUI : MonoBehaviour
 			{
 				slots[i].ClearSlot();
 			}
+		}
+
+		if (Input.GetButtonDown("Inventory"))
+		{
+			inventoryUI.SetActive(!inventoryUI.activeSelf);
 		}
 	}
 }
