@@ -1789,8 +1789,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   wallet_Balance: {fileID: 0}
-  item1: {fileID: 0}
-  item2: {fileID: 0}
 --- !u!1001 &496817953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2501,6 +2499,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2033119783}
     m_Modifications:
+    - target: {fileID: 5001921538784326614, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
+      propertyPath: attireRenderer
+      value: 
+      objectReference: {fileID: 207690287}
+    - target: {fileID: 6388182593725217408, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388182593725217408, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5001921538784326614, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
+    - target: {fileID: 6388182593725217408, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388182593725217408, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388182593725217408, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Item, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6388182593725217414, guid: 12c106c568c3f224f90de11b906ea915, type: 3}
       propertyPath: m_Name
       value: InventorySlot (1)
@@ -4701,8 +4723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2074175095}
   wallet_Balance: {fileID: 198006478}
-  item1: {fileID: 11400000, guid: 2ace5d497a1743f49afc5626a5b01996, type: 2}
-  item2: {fileID: 11400000, guid: 298e3dd5501a9054f8bf64e9c874d6c2, type: 2}
 --- !u!4 &1759600084
 Transform:
   m_ObjectHideFlags: 0

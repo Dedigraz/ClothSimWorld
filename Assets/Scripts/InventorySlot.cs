@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : Item
+public class InventorySlot : MonoBehaviour
 {
-	new public Image icon;
+	public Image icon;
 	public SpriteRenderer attireRenderer;
 	Item item;
 	public void AddItem(Item newItem)
